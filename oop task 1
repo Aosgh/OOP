@@ -1,0 +1,213 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Assignment1.ipynb",
+      "provenance": [],
+      "collapsed_sections": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "RkW3GVV60b0f",
+        "outputId": "b1594b82-1b14-4c61-a89f-8c29afe8c8a3"
+      },
+      "source": [
+        "# PROBLEM_1\n",
+        "\n",
+        "def check_Leap_Year(year):\n",
+        "    if (year % 4) == 0:\n",
+        "        if (year % 100) == 0:\n",
+        "            if (year % 400) == 0:\n",
+        "                return True\n",
+        "            else:\n",
+        "                return False\n",
+        "        else:\n",
+        "             return True\n",
+        "    else:\n",
+        "        return False\n",
+        "\n",
+        "a = int(input(\"Please enter the desired year : \"))\n",
+        "print(a , check_Leap_Year(a))\n",
+        "\n"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Please enter the desired year : 5000\n",
+            "5000 False\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "VXN5DyY93z0i",
+        "outputId": "f5cc9cb0-06fb-4315-c53e-78d1b31edcb6"
+      },
+      "source": [
+        "#PROBLEM_2\n",
+        "\n",
+        "n = int(input(\"Please enter a number: \"))\n",
+        "if (n%2==0) :\n",
+        "  if (n<=5) :\n",
+        "    print(\"Not Weired\")\n",
+        "  elif (6<=n<=20) :\n",
+        "    print(\"Weired\")\n",
+        "  elif (n>20) :\n",
+        "    print(\"Not Weired\")  \n",
+        "else :\n",
+        "  print(\"Weired\")       "
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Please enter a number: 14\n",
+            "Weired\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "7csnkZZg7tMZ",
+        "outputId": "ec517525-c597-498d-c760-1474971b09e7"
+      },
+      "source": [
+        "#PROBLEM_3\n",
+        "\n",
+        "list = []\n",
+        "n = int(input(\"please enter the number of attendees to arrive: \"))\n",
+        "for i in range (0 , n):\n",
+        "  name = str(input(\"Enter the name of the attendee arrived: \"))\n",
+        "  list.append(name)\n",
+        "\n",
+        "print(*list,\"attended the function\")\n",
+        "print(*list[n-4:n-1],\"were fashionally late\")\n"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "please enter the number of attendees to arrive: 7\n",
+            "Enter the name of the attendee arrived: Hardik\n",
+            "Enter the name of the attendee arrived: Rahul\n",
+            "Enter the name of the attendee arrived: Virat\n",
+            "Enter the name of the attendee arrived: Rishav\n",
+            "Enter the name of the attendee arrived: Mahi\n",
+            "Enter the name of the attendee arrived: Rohit\n",
+            "Enter the name of the attendee arrived: Rahane\n",
+            "Hardik Rahul Virat Rishav Mahi Rohit Rahane attended the function\n",
+            "Rishav Mahi Rohit were fashionally late\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "CuozaSbC99aa",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "cf8607cd-6713-4177-8b2d-e0da29c3facf"
+      },
+      "source": [
+        "def in_my_articles(doc_list:list, word:str):\n",
+        "    my_articles = []\n",
+        "    for article in doc_list:\n",
+        "        keywords = [i.lower().strip('.,') for i in article.split()]\n",
+        "        if word.lower() in keywords:\n",
+        "            my_articles.append(article)\n",
+        "    return my_articles\n",
+        "\n",
+        "doc_list = [\"The Learn Python Challenge Rohit\", \"They bought a car\", \"bangalore\",\"Rohit is a cricketer\"]\n",
+        "\n",
+        "print(in_my_articles(doc_list,'cRiCketer'))\n",
+        "print(in_my_articles(doc_list,'pYthon'))\n",
+        "print(in_my_articles(doc_list,'ROHit'))"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "['Rohit is a cricketer']\n",
+            "['The Learn Python Challenge Rohit']\n",
+            "['The Learn Python Challenge Rohit', 'Rohit is a cricketer']\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "G4uEuhAODV0J",
+        "outputId": "44e06c06-eb7e-4c1a-e086-b14c081e3b0c"
+      },
+      "source": [
+        "#PROBLEM_5\n",
+        "\n",
+        "bp=float(input(\"Enter the basic pay of employee: \"))\n",
+        "da = 0.4*bp\n",
+        "hra = 0.2*bp\n",
+        "print(\"The Gross Pay of the employee is: \",bp+da+hra)\n"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter the basic pay of employee: 10000\n",
+            "The Gross Pay of the employee is:  16000.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "HaAgNngvEZsa"
+      },
+      "source": [
+        ""
+      ],
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
