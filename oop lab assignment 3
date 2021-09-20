@@ -1,0 +1,204 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled7.ipynb",
+      "provenance": [],
+      "authorship_tag": "ABX9TyMvAi7Yt/wffk7hHU2LHK+H",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/LuckYYadav15/OOPS_Assignment/blob/main/OOPs_A-3(20bcs077)\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "JGOjymfhlp-K",
+        "outputId": "a2e5a47b-a318-4600-9473-aa4489eb3999"
+      },
+      "source": [
+        "#Question-1\n",
+        "class Student:\n",
+        "  def input_details(self, name, reg_no, age, gender, branch, sem):\n",
+        "    self.name = name\n",
+        "    self.reg_no = reg_no\n",
+        "    self.age = age\n",
+        "    self.gender = gender\n",
+        "    self.branch = branch\n",
+        "    self.sem = sem\n",
+        "\n",
+        "  def displaybasic(self):\n",
+        "    print(f\"Name: {self.name} \\n Regestration Number: {self.reg_no} \\n Age: {self.age} \\n Gender: {self.gender} \\n Branch: {self.branch} \\n Sem: {self.sem} \\n\")\n",
+        "class StudentResultInfo( Student ):\n",
+        "  def __init__(self, totalmarks, percentage, grade):\n",
+        "    self.total_marks = totalmarks\n",
+        "    self.percentage = percentage\n",
+        "    self.grade = grade\n",
+        "  def displayfull(self):\n",
+        "    print(f\"Total Marks: {self.total_marks} \\n Percentage: {self.percentage} \\n Grade: {self.grade}\")\n",
+        "s1 = StudentResultInfo(420, 84, \"A\")\n",
+        "s1.input_details(\"Amit\",\"20bcs0987\", 21, \"Male\", \"CSE\", 3 )\n",
+        "s1.displaybasic()\n",
+        "s1.displayfull()"
+      ],
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Name: Anmol \n",
+            " Regestration Number: 20bcs018 \n",
+            " Age: 21 \n",
+            " Gender: Male \n",
+            " Branch: CSE \n",
+            " Sem: 3 \n",
+            "\n",
+            "Total Marks: 420 \n",
+            " Percentage: 84 \n",
+            " Grade: A\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "I-epVXnjB1Ra",
+        "outputId": "079adfaa-be42-4416-97da-9b5a1eaa78d4"
+      },
+      "source": [
+        "#Question-2\n",
+        "class Pdf:\n",
+        "  def __init__(self, cr, dis, size):\n",
+        "    self.created = cr\n",
+        "    self.discription = dis\n",
+        "    self.size = size\n",
+        "\n",
+        "  def display(self):\n",
+        "    print(\"Created by:\",self.created)\n",
+        "    print(\"Description:\", self.discription)\n",
+        "    print(\"File size (in KBs):\", self.size)\n",
+        "\n",
+        "  def sizeLimit(self):\n",
+        "    if self.size > 1024:         \n",
+        "      print(\"Size exceeds threshold.\\n\")\n",
+        "    else:\n",
+        "      print(\"Size is within the threshold.\\n\")\n",
+        "\n",
+        "class Pic(Pdf):\n",
+        "  def __init__(self, created, discription, size, dimension):\n",
+        "    super().__init__(created, discription, size)\n",
+        "    self.dimension = dimension\n",
+        "\n",
+        "  def dimensioninfo(self):\n",
+        "    if self.dimension>256: \n",
+        "      print(\"hIGH Dimension!\\n\")\n",
+        "    else:\n",
+        "      print(\"Image is good.\\n\")\n",
+        "\n",
+        "  def displaypixel(self):\n",
+        "    self.display()\n",
+        "    print(\"Dimensions (in pixels):\", self.dimension)\n",
+        "\n",
+        "  \n",
+        "\n",
+        "p1 = Pdf(\"aman\", \"i am from IIIT Dharwad\", 1021)\n",
+        "p1.display()\n",
+        "p1.sizeLimit()\n",
+        "print()\n",
+        "img = Pic(\"Happy\", \"i am happy because my name is happy\", 1011, 255)\n",
+        "img.displaypixel()\n",
+        "img.dimensioninfo()"
+      ],
+      "execution_count": 31,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Created by: aman\n",
+            "Description: i am from IIIT Dharwad\n",
+            "File size (in KBs): 1021\n",
+            "Size is within the threshold.\n",
+            "\n",
+            "\n",
+            "Created by: Happy\n",
+            "Description: i am happy because my name is happy\n",
+            "File size (in KBs): 1011\n",
+            "Dimensions (in pixels): 255\n",
+            "Image is good.\n",
+            "\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "5x2YiAmeSiKI",
+        "outputId": "ad54ffe9-bf7d-40f6-e5a7-ae0c54b2aa04"
+      },
+      "source": [
+        "class Vehicle:\n",
+        "  def __init__(self, n, m, c): \n",
+        "    self.name = n\n",
+        "    self.mileage = m\n",
+        "    self.capacity = c\n",
+        "\n",
+        "  def fare(self):\n",
+        "    return self.capacity*100\n",
+        "\n",
+        "class Bus(Vehicle):\n",
+        "  def busFare(self):\n",
+        "    return 1.1*self.fare()\n",
+        "  def display(self):\n",
+        "    print(f\"Name: {self.name} \\n Mileage: {self.mileage} \\n Capacity: {self.capacity}\")\n",
+        "\n",
+        "bus1 = Bus(\"BMW\", 7, 52)\n",
+        "bus1.display()\n"
+      ],
+      "execution_count": 34,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Name: BMW \n",
+            " Mileage: 7 \n",
+            " Capacity: 52\n"
+          ]
+        }
+      ]
+    }
+  ]
+} 
