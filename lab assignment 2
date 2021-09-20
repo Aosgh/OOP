@@ -1,0 +1,595 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled6.ipynb",
+      "provenance": [],
+      "authorship_tag": "ABX9TyPF2z24goOZkvDPMemcKHpT",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/LuckYYadav15/OOPS_Assignment/blob/main/OOPs_A-2(20bcs077)\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "nBE9edzXRwjN",
+        "outputId": "dc005d10-6aff-4257-80dc-1500108f037e"
+      },
+      "source": [
+        "#Question-1\n",
+        "class circle:\n",
+        "  def area(self, r):\n",
+        "    a = 3.14*r*r\n",
+        "    print(f\"Area = {a}\")\n",
+        "  def preimeter(self, r):\n",
+        "    p = 2*3.14*r\n",
+        "    print(f\"Perimeter = {p}\")\n",
+        "C1 = circle()\n",
+        "r = int(input())\n",
+        "C1.area(r)\n",
+        "C1.preimeter(r)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "5\n",
+            "Area = 78.5\n",
+            "Perimeter = 31.400000000000002\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "HXiKHAd4Qbwn",
+        "outputId": "495313ca-4330-46bf-bad8-799ccc37f172"
+      },
+      "source": [
+        "#Question-2\n",
+        "class data:\n",
+        "  def __init__(self, name, id, brnch, salary):\n",
+        "    self.name = name\n",
+        "    self.id = id\n",
+        "    self.branch = branch\n",
+        "    self.salary = salary\n",
+        "  def details(self):\n",
+        "   print(f\"\"\"     Name: {self.name}\n",
+        "          Emp ID: {self.id}\n",
+        "          Branch: {self.branch}\n",
+        "          Salary: {self.salary}\"\"\")\n",
+        "print(\"Enter data of 5 Teachers: \")\n",
+        "\n",
+        "array = []\n",
+        "for i in range(0,5):\n",
+        "  name = input(\"Name: \")\n",
+        "  id = int(input(\"ID: \"))\n",
+        "  branch = input(\"Branch: \")\n",
+        "  salary = int(input(\"Salary: \"))\n",
+        "  print('\\n')\n",
+        "  t = data(name, id, branch, salary)\n",
+        "  array.append(t)\n",
+        "\n",
+        "for i in array:\n",
+        "  i.details()\n",
+        "    \n",
+        "    "
+      ],
+      "execution_count": 91,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter data of 5 Teachers: \n",
+            "Name: Amit\n",
+            "ID: 11\n",
+            "Branch: CSE\n",
+            "Salary: 1122\n",
+            "\n",
+            "\n",
+            "Name: Aman\n",
+            "ID: 12\n",
+            "Branch: CSE\n",
+            "Salary: 1123\n",
+            "\n",
+            "\n",
+            "Name: Aakash\n",
+            "ID: 1124\n",
+            "Branch: CSE\n",
+            "Salary: 1124\n",
+            "\n",
+            "\n",
+            "Name: Harshit\n",
+            "ID: 13\n",
+            "Branch: CSE\n",
+            "Salary: 1124\n",
+            "\n",
+            "\n",
+            "Name: Umang\n",
+            "ID: 14\n",
+            "Branch: CSE\n",
+            "Salary: 1125\n",
+            "\n",
+            "\n",
+            "     Name: Amit\n",
+            "          Emp ID: 11\n",
+            "          Branch: CSE\n",
+            "          Salary: 1122\n",
+            "     Name: Aman\n",
+            "          Emp ID: 12\n",
+            "          Branch: CSE\n",
+            "          Salary: 1123\n",
+            "     Name: Aakash\n",
+            "          Emp ID: 1124\n",
+            "          Branch: CSE\n",
+            "          Salary: 1124\n",
+            "     Name: Harshit\n",
+            "          Emp ID: 13\n",
+            "          Branch: CSE\n",
+            "          Salary: 1124\n",
+            "     Name: Umang\n",
+            "          Emp ID: 14\n",
+            "          Branch: CSE\n",
+            "          Salary: 1125\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "2gkVNgC2AOHu",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "8bff3b2c-783f-432b-8b2e-d8ae881abe9a"
+      },
+      "source": [
+        "#Question 3\n",
+        "class Account:\n",
+        "  def details(self, acno, acho, amount):\n",
+        "    self.acountno = acno\n",
+        "    self.acountholdername = acho\n",
+        "    self.amount = amount\n",
+        "  def Deposit(self, acno):\n",
+        "    if self.acountno == acno:\n",
+        "      print(\"\"\"Login sucessfull\n",
+        "      Enter amount to deposit: \"\"\")\n",
+        "      amt = int(input())\n",
+        "      print(f\"{amt} deposited sucessfully.\")\n",
+        "    else:\n",
+        "      print(\"You entered wrong details.\")\n",
+        "  def Withdraw(self, acno, acho):\n",
+        "    if self.acountno == acno and self.acountholdername == acho:\n",
+        "      print(\"\"\"Login Sucessfull\n",
+        "      Enter Amount to withdraw: \"\"\")\n",
+        "      amt = int(input())\n",
+        "      if amt > self.amount:\n",
+        "        print(\"Out of balance\")\n",
+        "      else:\n",
+        "        self.amount = self.amount - amt\n",
+        "        print(f\"Withdrawn {amt} rupees\")\n",
+        "    else:\n",
+        "      print(\"You enterred wrong details.\")\n",
+        "  def CheckBal(self, acno, acho ):\n",
+        "    if self.acountno == acno and self.acountholdername == acho:\n",
+        "      print(f\"Login sucessful, your account balance is {self.amount}\")  \n",
+        "    else:\n",
+        "      print(\"You entered wrong details.\")\n",
+        "  def Displayac(self, anco):\n",
+        "      print(f\"\"\" Your account details are:\n",
+        "        Account Number: {self.acountno}\n",
+        "        Account Holder name: {self.acountholdername}\n",
+        "        Amount = {self.amount}\"\"\")\n",
+        "\n",
+        "P1 = Account()\n",
+        "P1.details(111, \"Aman\", 774)\n",
+        "P2 = Account()\n",
+        "P2.details(112, \"Sahil\", 1024)\n",
+        "P3 = Account()\n",
+        "P3.details(113, \"Rahul\", 10000)\n",
+        "P4 = Account()\n",
+        "P4.details(114, \"Ted\", 20)\n",
+        "P1.Deposit(111)\n",
+        "P1.Displayac(111)\n",
+        "P2.Withdraw(112, \"Sahil\")\n",
+        "P2.Displayac(112)\n",
+        "P3.CheckBal(113, \"Rahul\")\n",
+        "P4.Displayac(114)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Login sucessfull\n",
+            "      Enter amount to deposit: \n",
+            "234\n",
+            "234 deposited sucessfully.\n",
+            " Your account details are:\n",
+            "        Account Number: 111\n",
+            "        Account Holder name: Aman\n",
+            "        Amount = 774\n",
+            "Login Sucessfull\n",
+            "      Enter Amount to withdraw: \n",
+            "234\n",
+            "Withdrawn 234 rupees\n",
+            " Your account details are:\n",
+            "        Account Number: 112\n",
+            "        Account Holder name: Sahil\n",
+            "        Amount = 790\n",
+            "Login sucessful, your account balance is 10000\n",
+            " Your account details are:\n",
+            "        Account Number: 114\n",
+            "        Account Holder name: Ted\n",
+            "        Amount = 20\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "buxIi34xmNkq",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "4a07dbcb-cf8b-4bd1-fb12-5193520873ad"
+      },
+      "source": [
+        "#Question 4\n",
+        "class Student:\n",
+        "  def details(self, name , usn, mark_eng, mark_maths , mark_science):\n",
+        "    self.name = name\n",
+        "    self.usn = usn\n",
+        "    self.mark_eng = mark_eng\n",
+        "    self.mark_maths = mark_maths\n",
+        "    self.mark_science = mark_science\n",
+        "    self.nlist = [\"arun\", \"ram\"]\n",
+        "    self.nlist.append(name)\n",
+        "    self.Emarks = [87, 77]\n",
+        "    self.Emarks.append(mark_eng)\n",
+        "    self.Mmarks = [54, 53]\n",
+        "    self.Mmarks.append(mark_maths)\n",
+        "    self.Smarks = [66, 69]\n",
+        "    self.Smarks.append(mark_science)\n",
+        "  def display(self, name, nlist, usn, Emarks, Mmarks, Smarks):\n",
+        "    for i in range(0,3):\n",
+        "      if name == nlist[i]:\n",
+        "        print(f\"Name = {nlist[i]},  USN = {usn} ,  Marks in English = {Emarks[i]} ,  Marks in Maths = {Mmarks[i]} ,  Marks in Science = {Smarks[i]}\")\n",
+        "        exit\n",
+        "      \n",
+        "a1 = Student()\n",
+        "a1.details(\"rahul\", 123, 76, 56, 45)\n",
+        "a1.display(\"rahul\", a1.nlist, a1.usn, a1.Emarks, a1.Mmarks, a1.Smarks)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Name = rahul,  USN = 123 ,  Marks in English = 76 ,  Marks in Maths = 56 ,  Marks in Science = 45\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "zqaZdU-pEAuF",
+        "outputId": "6fc26a7b-d341-47e1-82b0-3f4aad162ebf"
+      },
+      "source": [
+        "#Question-5\n",
+        "class Patient:\n",
+        "  def __init__(self):\n",
+        "    self.name = input(\"Name: \")\n",
+        "    self.admit_date = input(\"Admit Date(dd/mm/yy): \")\n",
+        "    i = int(input(\"Enter no of symptoms: \"))\n",
+        "    self.symptom = []\n",
+        "    self.gnum = 0\n",
+        "    self.onum = 0\n",
+        "    for j in range(1,i+1):\n",
+        "      temp = input(f\"symptom {j}: \")\n",
+        "      self.symptom.append(temp)\n",
+        "    self.oxy = int(input(\"oxygen level: \"))\n",
+        "    self.dis_date = input(\"Discharge Date(dd/mm/yy): \")\n",
+        "  def ward(self):\n",
+        "    if self.oxy <90:\n",
+        "      print(\"Shift patient to ICU and keep on Oxygen\")\n",
+        "      self.onum = self.onum + 1\n",
+        "    else:\n",
+        "      print(\"Patient's health is normal shift him to General Ward\")\n",
+        "      self.gnum = self.gnun + 1\n",
+        "  def patient_num(self):\n",
+        "    print(f\"Patient in General ward are : {self.gnum}.\")\n",
+        "    print(f\"Total Patients admitted are: {self.onum+self.gnum}.\")\n",
+        "  def display(self):\n",
+        "    print(f\"Patient Name: {self.name}  Patient's date of admit: {self.admit_date}   Patient's symptoms: {self.symptom}    Patient's Oxygen Level: {self.oxy}   Patient's date of discharge: {self.dis_date}\")\n",
+        "\n",
+        "\n",
+        "p1= Patient()\n",
+        "p1.display()\n",
+        "p1.ward()\n",
+        "p1.patient_num()"
+      ],
+      "execution_count": 92,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Name: Ram\n",
+            "Admit Date(dd/mm/yy): 11/11/21\n",
+            "Enter no of symptoms: 2\n",
+            "symptom 1: Cough\n",
+            "symptom 2: Headache\n",
+            "oxygen level: 89\n",
+            "Discharge Date(dd/mm/yy): 21/11/21\n",
+            "Patient Name: Ram  Patient's date of admit: 11/11/21   Patient's symptoms: ['Cough', 'Headache']    Patient's Oxygen Level: 89   Patient's date of discharge: 21/11/21\n",
+            "Shift patient to ICU and keep on Oxygen\n",
+            "Patient in General ward are : 0.\n",
+            "Total Patients admitted are: 1.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ixYJOBMdPAGZ",
+        "outputId": "859c0f3d-0a4b-4282-bcc6-33524af0f252"
+      },
+      "source": [
+        "#Question-6\n",
+        "class Time:\n",
+        "  def __init__(self):\n",
+        "    self.hours = int(input(\"Enter hours: \"))\n",
+        "    self.minutes = int(input(\"Minutes: \"))\n",
+        "    self. seconds = int(input(\"Seconds:  \"))\n",
+        "\n",
+        "  def display_time(self):\n",
+        "    if self.hours > 9:\n",
+        "      print(\"{0}:\".format(self.hours), end='')\n",
+        "    else:\n",
+        "      print(\"0{0}:\".format(self.hours), end='')\n",
+        "    if self.minutes > 9:\n",
+        "      print(\"{0}:\".format(self.minutes), end='')\n",
+        "    else:\n",
+        "      print(\"0{0}:\".format(self.minutes), end='')\n",
+        "    if self.seconds > 9:\n",
+        "      print(\"{0}\".format(self.seconds), end='')\n",
+        "    else:\n",
+        "      print(\"0{0}\".format(self.seconds), end='')\n",
+        "\n",
+        "t = Time()\n",
+        "t.display_time()"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter hours: 12\n",
+            "Minutes: 1\n",
+            "Seconds: 0\n",
+            "12:01:00"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "5L__IWFfPHQv",
+        "outputId": "2a75db3a-0506-49a9-ab0f-971f164a1587"
+      },
+      "source": [
+        "#Question-7\n",
+        "class student:\n",
+        "\n",
+        "  def __init__(self, name, age, roll):\n",
+        "    self.name = name\n",
+        "    self.age = age\n",
+        "    self.roll = roll  \n",
+        "\n",
+        "student1 = student(\"rahul\", 21, 33)\n",
+        "student2 = student(\"rohit\", 22, 74) \n",
+        "#function\n",
+        "def comp():\n",
+        "  if student1.age == student2.age:\n",
+        "    print(\"the ages of two students are equal\")\n",
+        "  else:\n",
+        "    print(\"the ages are not equal\")\n",
+        " \n",
+        "comp()"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "the ages are not equal\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "t2FIXXVjPqeY",
+        "outputId": "b61a76dd-82c6-403e-a800-7ab9297cc48f"
+      },
+      "source": [
+        "#Question-8\n",
+        "class Student:\n",
+        "  institute = \"IIIT Dharwad\"\n",
+        "  semester = 3\n",
+        "  def __init__(self):\n",
+        "    self.name = input(\"Name: \")\n",
+        "    self.USN = int(input(\"USN: \"))\n",
+        "\n",
+        "  def display_instance(self):\n",
+        "    print(f\"Name: {self.name}   USN: {self.USN} \")\n",
+        "  \n",
+        "  def display_class(self):\n",
+        "    print(f\"Institute name: {self.institute}   Semester: {self.semester}\")\n",
+        "\n",
+        "def explanation():\n",
+        "  print(f\"It has 2 class variables - Institute and Semester, 2 instance variables - name and USN, 1 class method - printClass and 1 instance method - printInstance. Instance methods use the instance variables, whereas class methods use the class variables.\")\n",
+        "\n",
+        "std1 = Student()\n",
+        "std1.display_class()\n",
+        "std1.display_instance()\n",
+        "explanation()"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Name: Anmol\n",
+            "USN: 2021\n",
+            "Institute name: IIIT Dharwad   Semester: 3\n",
+            "Name: Anmol   USN: 2021 \n",
+            "It has 2 class variables - Institute and Semester, 2 instance variables - name and USN, 1 class method - printClass and 1 instance method - printInstance. Instance methods use the instance variables, whereas class methods use the class variables.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1dDqZCFFj5lI",
+        "outputId": "7e57b2d1-b457-4d8e-d038-bb51034d35e1"
+      },
+      "source": [
+        "#Question-9\n",
+        "class Student:\n",
+        "\n",
+        "  def __init__(self):\n",
+        "    self.name = input(\"Enter name: \")\n",
+        "    self.roll_no = input(\"Roll No.: \")\n",
+        "    self.sem = (\"Semester: \")\n",
+        "    self.lappi1 = self.laptop1(\"intel\", \"32 gb\", \"512 gb\")\n",
+        "    self.lappi2 = self.laptop2(\"ryzen\", \"16 gb\", \"2 Tb\")\n",
+        "\n",
+        "  def display(self):\n",
+        "    print(\"name of student is: \", self.name)\n",
+        "    print(\"roll no. of student is: \", self.roll_no)\n",
+        "    print(\"semester of student is: \", self.sem)\n",
+        "\n",
+        "  class laptop1:\n",
+        "\n",
+        "    def __init__(self, name, ram, hard_disc):\n",
+        "      self.cpu = name\n",
+        "      self.ram = ram\n",
+        "      self.hard_disk = hard_disc\n",
+        "\n",
+        "    def display_inner1(self):\n",
+        "      print(\"chip used in cpu is: \", self.cpu)\n",
+        "      print(\"ram capacity is: \", self.ram)\n",
+        "      print(\"hard_disk capacity is: \", self.hard_disk)\n",
+        " \n",
+        "  class laptop2: \n",
+        "\n",
+        "    def __init__(self, name, ram, hard_disc):\n",
+        "      self.cpu = name\n",
+        "      self.ram = ram\n",
+        "      self.hard_disk = hard_disc\n",
+        "    \n",
+        "    def display_inner2(self):\n",
+        "      print(f\"chip used in cpu is:  {self.cpu}\")\n",
+        "      print(f\"ram capacity is: {self.ram}\")\n",
+        "      print(f\"hard_disk capacity is:  {self.hard_disk}\")      \n",
+        "\n",
+        "student1 = Student()\n",
+        "student1.display() \n",
+        "\n",
+        "print(\"\\n\")\n",
+        "\n",
+        "l1 = student1.lappi1\n",
+        "l1.display_inner1()\n",
+        "\n",
+        "print(\"\\n\")\n",
+        "\n",
+        "l2 = student1.lappi2\n",
+        "l2.display_inner2()\n"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter name: aman\n",
+            "Roll No.: 20bcs098\n",
+            "name of student is:  aman\n",
+            "roll no. of student is:  20bcs098\n",
+            "semester of student is:  Semester: \n",
+            "\n",
+            "\n",
+            "chip used in cpu is:  intel\n",
+            "ram capacity is:  32 gb\n",
+            "hard_disk capacity is:  512 gb\n",
+            "\n",
+            "\n",
+            "chip used in cpu is:  ryzen\n",
+            "ram capacity is: 16 gb\n",
+            "hard_disk capacity is:  2 Tb\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
