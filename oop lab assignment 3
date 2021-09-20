@@ -58,7 +58,7 @@
         "  def displayfull(self):\n",
         "    print(f\"Total Marks: {self.total_marks} \\n Percentage: {self.percentage} \\n Grade: {self.grade}\")\n",
         "s1 = StudentResultInfo(420, 84, \"A\")\n",
-        "s1.input_details(\"Amit\",\"20bcs0987\", 21, \"Male\", \"CSE\", 3 )\n",
+        "s1.input_details(\"Anmol\",\"20bcs018\", 21, \"Male\", \"CSE\", 3 )\n",
         "s1.displaybasic()\n",
         "s1.displayfull()"
       ],
